@@ -1,5 +1,6 @@
 const express = require("express");
-const routes = require("./routes/routes");
+const productRoutes = require("./routes/product");
+const cartRoutes = require("./routes/cart");
 const compression = require("compression");
 const cors = require("cors");
 
@@ -11,6 +12,7 @@ app.use(express.json());
 app.use(cors());
 app.use(compression());
 
-app.use(routes(router));
+app.use(productRoutes(router));
+app.use(cartRoutes(router));
 
 module.exports = app;
