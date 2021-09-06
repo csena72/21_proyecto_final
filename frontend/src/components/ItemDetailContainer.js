@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
-import { GetProductos } from "../helpers/GetProductos";
+import { GetProducts } from "../helpers/GetProducts";
 
 import { Spinner } from "react-bootstrap";
 
@@ -12,7 +12,7 @@ export const ItemDetailContainer = () => {
   const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
-    GetProductos(id)
+    GetProducts(id)
       .then((items) => {        
         setItem(items[0]);      
       })

@@ -1,10 +1,10 @@
-export const GetProductos = async (id = '') => {
-  const url = `http://localhost:8080/productos/listar/${id}`;
+export const GetProducts = async (id = '') => {
+  const url = `http://localhost:8080/api/productos/listar/${id}`;
   const data = await fetch(url).then((response) => response.json());
 
   const items = data.map((item) => {
     return {
-      id: item.id,
+      id: item._id,
       timestamp: item.timestamp,
       title: item.nombre,
       description: item.descripcion,

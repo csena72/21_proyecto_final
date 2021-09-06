@@ -5,7 +5,9 @@ import { NavBar } from "../components/NavBar";
 import { ItemListContainer } from "../components/ItemListContainer";
 import { ItemDetailContainer } from "../components/ItemDetailContainer";
 import { Help } from "../components/Help";
-import { AddProduct } from "../components/AddProduct";
+import { ProductList } from "../components/admin/ProductList";
+import { UsersList } from "../components/admin/UsersList";
+import { AddProduct } from "../components/admin/AddProduct";
 import { Cart } from "../components/Cart";
 
 export const AppRouter = () => {
@@ -18,6 +20,8 @@ export const AppRouter = () => {
           <Route path="/itemDetail/:id?" component={ItemDetailContainer} />
           <Route path="/itemList/:categoryId?" component={ItemListContainer} />
           <Route path="/help" component={Help} />
+          <Route path="/productList" component={ProductList} />
+          <Route path="/usersList" component={UsersList} />
           <Route path="/addProduct" component={AddProduct} />
           <Route path="/cart" component={Cart} />
         </Switch>

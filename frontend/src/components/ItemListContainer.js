@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GetProductos } from "../helpers/GetProductos";
+import { GetProducts } from "../helpers/GetProducts";
 import { ItemList } from "./ItemList";
 import { Container, Spinner } from "react-bootstrap";
 
@@ -8,7 +8,7 @@ export const ItemListContainer = () => {
   const [isLoad, setIsLoad] = useState(true);
 
   useEffect(() => {
-    GetProductos()
+    GetProducts()
       .then((items) => {        
         setItems(items);
       })

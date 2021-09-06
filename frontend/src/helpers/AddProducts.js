@@ -1,5 +1,5 @@
 export const AddProducts = async (data) => {
-  const url = "http://localhost:8080/productos/agregar";
+  const url = "http://localhost:8080/api/productos/agregar";  
   
   await fetch(url, {
     method: "POST",

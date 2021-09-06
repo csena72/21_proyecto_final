@@ -2,7 +2,8 @@ import { CartWidget } from "./CartWidget";
 
 import {
   Navbar,
-  Nav,  
+  Nav,
+  NavDropdown,  
   Image,
   Form,
   FormControl,
@@ -22,7 +23,16 @@ export const NavBar = () => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
 
-            <Nav.Link href="/addProduct">Agregar Producto</Nav.Link>
+          <NavDropdown title="Administrar" id="basic-nav-dropdown">             
+                <NavDropdown.Item href="/productList">
+                  Productos
+                </NavDropdown.Item>
+                <NavDropdown.Item href="/usersList">
+                  Usuarios
+                </NavDropdown.Item>
+             
+            </NavDropdown>
+            
             <Nav.Link href="/help">Ayuda</Nav.Link>
             <CartWidget />
           </Nav>

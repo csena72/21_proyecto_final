@@ -1,9 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
-import { MdDone } from "react-icons/md";
-import { AddProducts } from "../helpers/AddProducts"; 
+import { Link } from "react-router-dom";
+import { MdDone, MdBackspace } from "react-icons/md";
+import { AddProducts } from "../../helpers/AddProducts"; 
 import { Container } from "react-bootstrap";
+import Swal from "sweetalert2";
 
 export const FormProduct = ({ onHide }) => {
   const {
@@ -13,7 +15,13 @@ export const FormProduct = ({ onHide }) => {
   } = useForm();
 
   const onSubmit = (data, e) => {        
-    AddProducts(data);
+    AddProducts(data).then((resp) => {
+      Swal.fire({
+        title: `Producto agregado con éxito!`,        
+        icon: "success",
+        confirmButtonText: "Aceptar",
+      });      
+    });    
   };
 
   return (
@@ -164,7 +172,11 @@ export const FormProduct = ({ onHide }) => {
           </span>
         </Form.Text>
       </Form.Group>
-
+      <Link to={"/productList"} className="abtn">
+        <Button className="float-left" type="submit" variant="success">
+        <MdBackspace /> Volver
+        </Button>
+      </Link>
       <Button className="float-right" type="submit" variant="success">
         Agregar Producto <MdDone />
       </Button>
