@@ -16,12 +16,12 @@ export const GetProducts = async (id = '') => {
     return {
       id: item._id,
       timestamp: item.timestamp,
-      title: item.nombre,
-      description: item.descripcion,
-      code: item.codigo,
+      nombre: item.nombre,
+      descripcion: item.descripcion,
+      codigo: item.codigo,
       stock: item.stock,
-      price: item.precio,
-      image: item.foto,
+      precio: item.precio,
+      foto: item.foto,
     };
   });
 

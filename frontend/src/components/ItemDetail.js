@@ -26,7 +26,7 @@ export const ItemDetail = ({ item }) => {
         <Col lg={8} mb={4}>
           <div>
             <div className="main-product-image">
-              <Image className="mx-auto d-block animate__animated animate__fadeIn animate__slow" src={'/assets/img/' + item.image} />
+              <Image className="mx-auto d-block animate__animated animate__fadeIn animate__slow" src={'/assets/img/' + item.foto} />
             </div>
           </div>
         </Col>
@@ -34,13 +34,13 @@ export const ItemDetail = ({ item }) => {
         <Col lg={4}>
           <Card>
             <Card.Body>
-              <Card.Title>{item.title}</Card.Title>
+              <Card.Title>{item.nombre}</Card.Title>
               <hr />
               <Card.Text className="float-right">
-                Descripción: {item.description}
+                Descripción: {item.descripcion}
               </Card.Text>
               <Card.Text className="float-right">
-                Precio: {formatNumber(item.price)}
+                Precio: {formatNumber(item.precio)}
               </Card.Text>
               <ItemCount
                 stock={stockActual}

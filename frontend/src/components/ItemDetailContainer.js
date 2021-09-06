@@ -13,8 +13,8 @@ export const ItemDetailContainer = () => {
 
   useEffect(() => {
     GetProducts(id)
-      .then((items) => {        
-        setItem(items[0]);      
+      .then((item) => {                
+        setItem(item);      
       })
       .catch((error) => {
         console.log("Error searching items", error);

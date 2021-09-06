@@ -18,16 +18,16 @@ export const Item = ({ item }) => {
   return (
     <Card style={{ width: "14rem" }}>
       <Link to={"/itemDetail/" + item.id}>
-        <Card.Img variant="top" className="animate__animated animate__fadeIn animate__slow" src={'/assets/img/' + item.image} />
+        <Card.Img variant="top" className="animate__animated animate__fadeIn animate__slow" src={'/assets/img/' + item.foto} />
       </Link>
       <Card.Body>
         <hr />
         <Link to={"/itemDetail/" + item.id}>
-          <Card.Title>{item.title}</Card.Title>
+          <Card.Title>{item.nombre}</Card.Title>
         </Link>
 
         <FaTruck />
-        <Card.Text className="float-right">{formatNumber(item.price)}</Card.Text>
+        <Card.Text className="float-right">{formatNumber(item.precio)}</Card.Text>
         <ItemCount
           stock={currentStock}
           initial={1}

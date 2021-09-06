@@ -54,19 +54,19 @@ export const Cart = () => {
                       <Image
                         className="mx-auto d-block"
                         width="80px"
-                        src={'/assets/img/' + product.item.image}
+                        src={'/assets/img/' + product.item.foto}
                       />
                     </td>
-                    <td className="align-middle">{product.item.title}</td>
-                    <td className="align-middle">{product.item.description}</td>
+                    <td className="align-middle">{product.item.nombre}</td>
+                    <td className="align-middle">{product.item.descripcion}</td>
                     <td className="align-middle text-center">
                       {product.quantity}
                     </td>
                     <td className="align-middle text-right">
-                      {formatNumber(product.item.price)}
+                      {formatNumber(product.item.precio)}
                     </td>
                     <td className="align-middle text-right">
-                      {formatNumber(product.item.price * product.quantity)}
+                      {formatNumber(product.item.precio * product.quantity)}
                     </td>
                     <td className="align-middle">  
                         <Button
