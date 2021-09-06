@@ -1,5 +1,6 @@
 import React from "react";
 import { Row, Col } from "react-bootstrap";
+import { useHistory } from "react-router-dom";
 import { FormProduct } from "./FormProduct";
 import { GetProducts } from "../../api/GetProducts";
 import { AddProducts } from "../../api/AddProducts"; 
@@ -12,8 +13,9 @@ export const AddProduct = (props) => {
 
   const productId = props?.match?.params?.id;
   const isEdit= Boolean(productId);
+  const history = useHistory();  
 
-  const [product, setProduct ] = React.useState(null);  
+  const [product, setProduct ] = React.useState(null);
 
   const addProductHandle = (data) => {
     AddProducts(data).then((resp) => {
@@ -21,7 +23,11 @@ export const AddProduct = (props) => {
         title: `Producto agregado con éxito!`,        
         icon: "success",
         confirmButtonText: "Aceptar",
-      });      
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          history.push('/productList');
+        }
+      })      
     });    
   }
 
@@ -31,7 +37,11 @@ export const AddProduct = (props) => {
         title: `Producto editado con éxito!`,        
         icon: "success",
         confirmButtonText: "Aceptar",
-      });      
+      }).then((result) => {        
+        if (result.isConfirmed) {
+          history.push('/productList');
+        }
+      })       
     });    
   } 
 
