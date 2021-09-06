@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { GetProducts } from "../helpers/GetProducts";
+import { GetProducts } from "../api/GetProducts";
 import { ItemList } from "./ItemList";
 import { Container, Spinner } from "react-bootstrap";
 

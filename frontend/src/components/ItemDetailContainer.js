@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { useHistory, useParams } from "react-router";
 import { ItemDetail } from "./ItemDetail";
-import { GetProducts } from "../helpers/GetProducts";
+import { GetProducts } from "../api/GetProducts";
 
 import { Spinner } from "react-bootstrap";
 

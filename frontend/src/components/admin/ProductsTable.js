@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
-import { GetProducts } from "../../helpers/GetProducts";
-import { DeleteProducts } from "../../helpers/DeleteProduct";
+import { GetProducts } from "../../api/GetProducts";
+import { DeleteProducts } from "../../api/DeleteProduct";
 import { Link } from "react-router-dom";
 import { Row, Col, Image, Button, Table } from "react-bootstrap";
 import { MdDelete, MdEdit, MdAdd } from "react-icons/md";

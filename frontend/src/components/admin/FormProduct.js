@@ -3,7 +3,7 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdDone, MdBackspace } from "react-icons/md";
-import { AddProducts } from "../../helpers/AddProducts"; 
+import { AddProducts } from "../../api/AddProducts"; 
 import { Container } from "react-bootstrap";
 import Swal from "sweetalert2";
 
