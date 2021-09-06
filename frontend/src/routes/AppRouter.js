@@ -7,7 +7,7 @@ import { ItemDetailContainer } from "../components/ItemDetailContainer";
 import { Help } from "../components/Help";
 import { ProductList } from "../components/admin/ProductList";
 import { UsersList } from "../components/admin/UsersList";
-import { AddProduct } from "../components/admin/AddProduct";
+import { AddProduct as formPageProduct } from "../components/admin/AddProduct";
 import { Cart } from "../components/Cart";
 
 export const AppRouter = () => {
@@ -22,7 +22,8 @@ export const AppRouter = () => {
           <Route path="/help" component={Help} />
           <Route path="/productList" component={ProductList} />
           <Route path="/usersList" component={UsersList} />
-          <Route path="/addProduct" component={AddProduct} />
+          <Route path="/addProduct" component={formPageProduct} />
+          <Route path="/editProduct/:id" component={formPageProduct} />
           <Route path="/cart" component={Cart} />
         </Switch>
       </BrowserRouter>

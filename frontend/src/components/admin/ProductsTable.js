@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { GetProducts } from "../../api/GetProducts";
 import { DeleteProducts } from "../../api/DeleteProduct";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { Row, Col, Image, Button, Table } from "react-bootstrap";
 import { MdDelete, MdEdit, MdAdd } from "react-icons/md";
 import Swal from "sweetalert2";
@@ -9,18 +9,18 @@ import Swal from "sweetalert2";
 
 const ProductsTable = () => {
 
-  const [items, setItems] = useState([]);  
+  const [items, setItems] = useState([]);
+  const history = useHistory();  
 
   useEffect(() => {
     GetProducts()
-      .then((items) => {        
-        setItems(items);
-        console.log(items)
+      .then((items) => {
+        setItems(items);        
       })
       .catch((error) => {
         console.log("Error searching items", error);
       })
-  }, [setItems]);
+  }, []);
 
 
   const removeProduct = (id) => {    
@@ -34,8 +34,8 @@ const ProductsTable = () => {
     });
   };
 
-  const editProduct = (id) => {
-    console.log(id);
+  const editProduct = (id) => {    
+    history.push(`/editProduct/${id}`)    
   };
 
   return (
@@ -76,7 +76,7 @@ const ProductsTable = () => {
             </thead>
 
             <tbody>
-            {items.map((item, index) => (
+            {items?.map((item, index) => (
               <tr key={index} id={item.id}>
                 <td>
                   <Image

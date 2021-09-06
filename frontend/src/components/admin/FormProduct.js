@@ -3,26 +3,25 @@ import { useForm } from "react-hook-form";
 import { Form, Button } from "react-bootstrap";
 import { Link } from "react-router-dom";
 import { MdDone, MdBackspace } from "react-icons/md";
-import { AddProducts } from "../../api/AddProducts"; 
 import { Container } from "react-bootstrap";
-import Swal from "sweetalert2";
 
-export const FormProduct = ({ onHide }) => {
+
+export const FormProduct = ({ onHide, defaultValues,onClick ,isEdit }) => {
+
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
 
-  const onSubmit = (data, e) => {        
-    AddProducts(data).then((resp) => {
-      Swal.fire({
-        title: `Producto agregado con éxito!`,        
-        icon: "success",
-        confirmButtonText: "Aceptar",
-      });      
-    });    
+  const onSubmit = (data) => {        
+    onClick(data)
   };
+
+React.useEffect(()=>{
+  reset(defaultValues)
+},[reset,defaultValues]);
 
   return (
     <Container fluid="lg">
@@ -178,7 +177,10 @@ export const FormProduct = ({ onHide }) => {
         </Button>
       </Link>
       <Button className="float-right" type="submit" variant="success">
-        Agregar Producto <MdDone />
+        {isEdit?
+        (<>Actualizar Producto <MdDone /></> ):
+        (<>Agregar Producto <MdDone /></> ) 
+        }
       </Button>
     </Form>
     </Container>
