@@ -15,11 +15,12 @@ const ProductsTable = () => {
     GetProducts()
       .then((items) => {        
         setItems(items);
+        console.log(items)
       })
       .catch((error) => {
         console.log("Error searching items", error);
       })
-  }, []);
+  }, [setItems]);
 
 
   const removeProduct = (id) => {    
@@ -29,7 +30,7 @@ const ProductsTable = () => {
         icon: "success",
         confirmButtonText: "Aceptar",
       });
-      
+      document.getElementById(id).remove();
     });
   };
 
@@ -76,7 +77,7 @@ const ProductsTable = () => {
 
             <tbody>
             {items.map((item, index) => (
-              <tr key={index}>
+              <tr key={index} id={item.id}>
                 <td>
                   <Image
                     className="mx-auto d-block"
