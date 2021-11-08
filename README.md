@@ -80,6 +80,10 @@ _Para ver la app en el navegador:_
 
 http://localhost:3000/
 
+## Para realizar una prueba de performance con  Artillery:
+```
+artillery quick -c 50 -n 20 "http://localhost:3000/home" > artillery_prof.txt
+```
 
 ## Back Construido con 🛠️
 
