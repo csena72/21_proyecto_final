@@ -122,7 +122,7 @@ export const Cart = () => {
                 </tr>
                 <tr>
                   <td colSpan={12} className="text-center">
-                    <Link to={"/"} className="abtn">
+                    <Link to={"/home"} className="abtn">
                       <Button
                         style={{ marginTop: "0.1em" }}
                         variant="secondary"

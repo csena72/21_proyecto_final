@@ -61,7 +61,7 @@ export const ItemDetail = ({ item }) => {
       <Row style={{ margin: "3em" }}>
         <Col lg={5} xs={4}></Col>
         <Col lg={2} xs={4}>
-          <Link to={"/"} className="abtn">
+          <Link to={"/home"} className="abtn">
             <Button
               style={{ marginTop: "0.1em" }}
               variant="secondary"
