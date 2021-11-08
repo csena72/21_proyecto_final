@@ -1,0 +1,10 @@
+[2021-11-07T12:16:44.429] [ERROR] error - Error en conexión de Base de datos: MongoServerError: bad auth : Authentication failed.
+[2021-11-07T21:48:29.579] [ERROR] error - Error: connect ECONNREFUSED 127.0.0.1:465
+    at TCPConnectWrap.afterConnect [as oncomplete] (net.js:1159:16) {
+  errno: -4078,
+  code: 'ESOCKET',
+  syscall: 'connect',
+  address: '127.0.0.1',
+  port: 465,
+  command: 'CONN'
+}

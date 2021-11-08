@@ -6,7 +6,7 @@ exports.getProductsOfCart = async (req, res, next) => {
     const { id } = req.params;
     let productsOfCart = await cart.getProductsOfCart();
     if(id){productsOfCart = await cart.getProductOfCart(id)};
-    
+
     res.json(productsOfCart);
 }
 

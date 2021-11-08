@@ -7,7 +7,7 @@ const productSchema = new Schema({
     codigo: String,
     foto: String,
     precio: Number,
-    stock: Number        
+    stock: Number
 })
 
 module.exports = model('Product', productSchema);

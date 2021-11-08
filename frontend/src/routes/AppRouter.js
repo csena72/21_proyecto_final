@@ -9,6 +9,11 @@ import { ProductList } from "../components/admin/ProductList";
 import { UsersList } from "../components/admin/UsersList";
 import { AddProduct as formPageProduct } from "../components/admin/AddProduct";
 import { Cart } from "../components/Cart";
+import { Login } from "../components/Login";
+import { Register } from "../components/Register";
+import { RegisterError } from "../components/RegisterError";
+import { LoginError } from "../components/LoginError";
+import { UserEdit } from "../components/UserEdit";
 
 export const AppRouter = () => {
   return (
@@ -16,7 +21,12 @@ export const AppRouter = () => {
       <BrowserRouter>
         <NavBar />
         <Switch>
-          <Route exact path="/" component={ItemListContainer} />
+          <Route exact path="/" component={Login} />
+          <Route exact path="/home" component={ItemListContainer} />
+          <Route path="/userEdit" component={UserEdit} />
+          <Route path="/loginError" component={LoginError} />
+          <Route path="/register" component={Register} />
+          <Route path="/registerError" component={RegisterError}/>
           <Route path="/itemDetail/:id?" component={ItemDetailContainer} />
           <Route path="/itemList/:categoryId?" component={ItemListContainer} />
           <Route path="/help" component={Help} />

@@ -3,7 +3,7 @@ import { CartWidget } from "./CartWidget";
 import {
   Navbar,
   Nav,
-  NavDropdown,  
+  NavDropdown,
   Image,
   Form,
   FormControl,
@@ -15,24 +15,30 @@ export const NavBar = () => {
   return (
     <>
       <Navbar bg="dark" expand="lg" variant="dark" fixed="top">
-        <Navbar.Brand href="/">
+        <Navbar.Brand href="/home">
           <Image src={"/logo.png"} />
           TiendaNet
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
-
-          <NavDropdown title="Administrar" id="basic-nav-dropdown">             
+          <NavDropdown title="Mi perfil" id="basic-nav-dropdown">
+                <NavDropdown.Item href="/userEdit">
+                  Editar
+                </NavDropdown.Item>
+                <NavDropdown.Item href="http://localhost:8080/logout">
+                  Salir
+                </NavDropdown.Item>
+          </NavDropdown>
+          <NavDropdown title="Administrar" id="basic-nav-dropdown">
                 <NavDropdown.Item href="/productList">
                   Productos
                 </NavDropdown.Item>
                 <NavDropdown.Item href="/usersList">
                   Usuarios
                 </NavDropdown.Item>
-             
-            </NavDropdown>
-            
+          </NavDropdown>
+
             <Nav.Link href="/help">Ayuda</Nav.Link>
             <CartWidget />
           </Nav>

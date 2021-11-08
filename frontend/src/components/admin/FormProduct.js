@@ -38,8 +38,8 @@ React.useEffect(()=>{
               message: "Nombre es requerido",
             },
             maxLength: {
-              value: 30,
-              message: "No más de 30 carácteres!",
+              value: 50,
+              message: "No más de 50 carácteres!",
             },
             minLength: {
               value: 4,
@@ -66,8 +66,8 @@ React.useEffect(()=>{
               message: "El campo descripción es requerido",
             },
             maxLength: {
-              value: 30,
-              message: "No más de 30 carácteres!",
+              value: 50,
+              message: "No más de 50 carácteres!",
             },
             minLength: {
               value: 8,

@@ -7,6 +7,6 @@ module.exports = (router) => {
     .post('/api/productos/agregar', productController.createProduct)
     .put('/api/productos/actualizar/:id', productController.updateProduct)
     .delete('/api/productos/borrar/:id', productController.deleteProduct)
-    
+
     return router;
 }

@@ -4,10 +4,10 @@ const product = new productService();
 
 
 exports.getProducts = async (req, res,next) => {
-    const { id } = req.params;        
+    const { id } = req.params;
     let allProducts = await product.getAllProducts();
     if(id){allProducts = await product.getProduct(id)};
-   
+
     res.json(allProducts);
 }
 
