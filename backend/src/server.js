@@ -4,11 +4,10 @@ const cors = require("cors");
 const bCrypt = require("bcrypt");
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
-const productRoutes = require("./routes/product");
-const cartRoutes = require("./routes/cart");
+const routes = require("./routes/routes");
 const { MONGO_URI, FRONT_URL } = require("./config/globals");
 const MongoStore = require("connect-mongo");
-const User = require("./dao/models/user");
+const User = require("./dal/dao/models/user");
 
 // Logs
 const logger = require('./logs/logger');
@@ -30,8 +29,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(cors());
 app.use(compression());
 
-app.use(productRoutes(router));
-app.use(cartRoutes(router));
+app.use(routes(router));
 
 passport.use(
     "login",

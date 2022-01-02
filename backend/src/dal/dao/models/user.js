@@ -12,4 +12,4 @@ const userSchema = new Schema({
     provider: String
 })
 
-module.exports = model('User', userSchema);
+module.exports = model('UserDao', userSchema);

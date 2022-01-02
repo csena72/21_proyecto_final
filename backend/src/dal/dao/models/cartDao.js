@@ -2,7 +2,7 @@ const { Schema, model } = require('mongoose');
 
 const cartSchema = new Schema({
     timestamp: String,
-    product: Object,    
+    product: Object,
 })
 
-module.exports = model('Cart', cartSchema);
+module.exports = model('CartDao', cartSchema);

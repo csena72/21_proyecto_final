@@ -10,4 +10,4 @@ const productSchema = new Schema({
     stock: Number
 })
 
-module.exports = model('Product', productSchema);
+module.exports = model('ProductDao', productSchema);

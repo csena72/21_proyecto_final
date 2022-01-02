@@ -1,5 +1,5 @@
 const { PORT } = require('./config/globals.js');
-const { getConnection } = require('./dao/db/connection');
+const { getConnection } = require('./dal/dao/db/connection');
 
 const app = require('./server');
 
